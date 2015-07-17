@@ -201,7 +201,7 @@ static NSDateFormatter * _dateFormatter = nil;
 
 + (NSDate *)addMonth:(int)month toDate:(NSDate *)date;
 {
-    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
     NSDateComponents * components = [[NSDateComponents alloc] init];
     components.month = month;
@@ -210,7 +210,7 @@ static NSDateFormatter * _dateFormatter = nil;
 
 + (NSDate *)addDay:(int)day toDate:(NSDate *)date;
 {
-    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
     NSDateComponents * components = [[NSDateComponents alloc] init];
     components.day = day;
