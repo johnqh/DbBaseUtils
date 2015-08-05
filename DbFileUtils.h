@@ -17,6 +17,7 @@
 + (bool)fileExists:(NSString *)path;
 + (void)deleteFile:(NSString *)path;
 + (bool)copyFile:(NSString *)toPath from:(NSString *)fromPath;
++ (bool)copyFile:(NSString *)toPath from:(NSString *)fromPath forced:(bool)forced;
 + (bool)moveFile:(NSString *)toPath from:(NSString *)fromPath;
 
 @end

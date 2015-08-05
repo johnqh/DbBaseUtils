@@ -27,6 +27,15 @@
 
 + (bool)copyFile:(NSString *)toPath from:(NSString *)fromPath
 {
+    return [self copyFile:toPath from:fromPath forced:false];
+}
+
++ (bool)copyFile:(NSString *)toPath from:(NSString *)fromPath forced:(bool)forced
+{
+    if (forced)
+    {
+        [self deleteFile:toPath];
+    }
     if ([self fileExists:fromPath] && ![self fileExists:toPath])
     {
         return [[NSFileManager defaultManager] copyItemAtPath:fromPath toPath:toPath error:nil];
