@@ -7,11 +7,10 @@
 //
 
 #import "DbWeakArray.h"
-#import "DbWeakReference.h"
 
 @interface DbWeakArray()
 {
-    NSMutableArray * _array;
+    NSPointerArray * _array;
 }
 
 @end
@@ -27,7 +26,7 @@
 {
     if (self = [super init])
     {
-        _array = [NSMutableArray array];
+        _array = [NSPointerArray weakObjectsPointerArray];
         return self;
     }
     return nil;
@@ -47,27 +46,27 @@
 
 - (void)insertObject:(id)anObject atIndex:(NSUInteger)index
 {
-    [_array insertObject:[DbWeakReference weakReference:anObject] atIndex:index];
+    [_array insertPointer:(__bridge void *)anObject atIndex:index];
 }
 
 - (void)removeObjectAtIndex:(NSUInteger)index
 {
-    [_array removeObjectAtIndex:index];
+    [_array removePointerAtIndex:index];
 }
 
 - (void)addObject:(id)anObject
 {
-    [_array addObject:[DbWeakReference weakReference:anObject]];
+    [_array addPointer:(__bridge void *)anObject];
 }
 
 - (void)removeLastObject
 {
-    [_array removeLastObject];
+    [self removeObjectAtIndex:self.count - 1];
 }
 
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject
 {
-    [_array replaceObjectAtIndex:index withObject:[DbWeakReference weakReference:anObject]];
+    [_array replacePointerAtIndex:index withPointer:(__bridge void *)anObject];
 }
 
 - (NSUInteger)count
@@ -77,8 +76,7 @@
 
 - (id)objectAtIndex:(NSUInteger)index
 {
-    DbWeakReference * reference = [_array objectAtIndex:index];
-    return reference.obj;
+    return (__bridge id)[_array pointerAtIndex:index];
 }
 
 - (NSUInteger)indexOfObject:(id)anObject
