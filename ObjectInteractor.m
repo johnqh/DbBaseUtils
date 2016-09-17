@@ -10,4 +10,24 @@
 
 @implementation ObjectInteractor
 
+- (NSString *)displayTitle
+{
+    return _data.displayTitle;
+}
+
+- (NSString *)displaySubtitle
+{
+    return _data.displaySubtitle;
+}
+
+- (NSString *)displayImageUrl
+{
+    return _data.displayImageUrl;
+}
+
+- (NSObject<InteractiveArray> *)children:(NSString *)tag
+{
+    return [_data children:tag];
+}
+
 @end

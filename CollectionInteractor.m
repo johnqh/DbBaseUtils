@@ -21,9 +21,8 @@
         _collection = collection;
         if (_collection)
         {
-            [_collection addObserver:self forKeyPath:@"entries" options:0 context:nil];
+            [_collection addObserver:self forKeyPath:@"entries" options:NSKeyValueObservingOptionInitial context:nil];
         }
-        [self refresh];
     }
 }
 
@@ -55,19 +54,23 @@
                 }];
             }
         }
+        else
+        {
+            NSMutableArray * entries = [NSMutableArray arrayWithCapacity:self.collection.entries.count];
+            for (NSObject<InteractiveObject> * entry in self.collection.entries)
+            {
+                NSObject<InteractiveObject> * interactor = [self interactorFromEntry:entry];
+                [entries addObject:interactor];
+            }
+            self.entries = entries;
+        }
 
     }
 }
 
-- (void)refresh
+- (void)dealloc
 {
-    NSMutableArray * entries = [NSMutableArray arrayWithCapacity:self.collection.entries.count];
-    for (NSObject<InteractiveObject> * entry in self.collection.entries)
-    {
-        NSObject<InteractiveObject> * interactor = [self interactorFromEntry:entry];
-        [entries addObject:interactor];
-    }
-    self.entries = entries;
+    self.collection = nil;
 }
 
 @end

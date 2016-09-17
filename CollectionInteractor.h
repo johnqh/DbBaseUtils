@@ -13,6 +13,4 @@
 
 @property (nonatomic, strong) NSObject<InteractiveArray> * collection;
 
-- (void)refresh;
-
 @end

@@ -8,12 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol InteractiveArray;
+
 @protocol InteractiveObject <NSObject>
+
+@property (nonatomic, readonly) NSString * displayTitle;
+@property (nonatomic, readonly) NSString * displaySubtitle;
+@property (nonatomic, readonly) NSString * displayImageUrl;
+- (NSObject<InteractiveArray> *)children:(NSString *)tag;
 
 @end
 
 @protocol InteractiveArray <NSObject>
 
-@property (nonatomic, strong) NSMutableArray * entries;
+@property (nonatomic, strong) NSMutableArray<NSObject<InteractiveObject> *> * entries;
+
+@optional
+
+@property (nonatomic, strong) NSObject<InteractiveObject> * parent;
+@property (nonatomic, strong) NSString * title;
 
 @end
