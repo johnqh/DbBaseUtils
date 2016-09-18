@@ -12,6 +12,7 @@
 
 @protocol InteractiveObject <NSObject>
 
+@optional
 @property (nonatomic, readonly) NSString * displayTitle;
 @property (nonatomic, readonly) NSString * displaySubtitle;
 @property (nonatomic, readonly) NSString * displayImageUrl;
@@ -19,7 +20,7 @@
 
 @end
 
-@protocol InteractiveArray <NSObject>
+@protocol InteractiveArray <InteractiveObject>
 
 @property (nonatomic, strong) NSMutableArray<NSObject<InteractiveObject> *> * entries;
 
