@@ -12,6 +12,11 @@
 
 @synthesize entries = _entries;
 
+- (NSString *)displaySubtitle
+{
+    return [NSString stringWithFormat:@"%d", (int)_entries.count];
+}
+
 - (NSObject<InteractiveObject> *)interactorFromEntry:(NSObject<InteractiveObject> *)entry
 {
     return entry;   // default to object directly

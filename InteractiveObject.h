@@ -27,6 +27,5 @@
 @optional
 
 @property (nonatomic, strong) NSObject<InteractiveObject> * parent;
-@property (nonatomic, strong) NSString * title;
 
 @end
