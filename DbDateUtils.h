@@ -10,6 +10,9 @@
 
 @interface DbDateUtils : NSObject
 
++ (NSDateFormatter *)gmtFormatter;
++ (NSDateFormatter *)localFormatter;
+
 + (NSString *)dateToServer:(NSDate *)date;
 + (NSDate *)dateFromServer:(NSString *)text;
 
@@ -25,6 +28,7 @@
 + (NSDate *)fromString:(NSString *)text;
 + (NSString *)toDateString:(NSDate *)date;
 + (NSString *)toUSEnglishString:(NSDate *)date;
++ (NSString *)toTimeString:(NSDate *)date;
 
 + (NSDate *)addMonth:(int)month toDate:(NSDate *)date;
 + (NSDate *)addDay:(int)day toDate:(NSDate *)date;

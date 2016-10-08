@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "InteractiveObject.h"
+#import "ModelObject.h"
 
-@interface ArrayInteractor : NSObject<InteractiveArray>
+@interface ArrayInteractor : NSObject<ModelList>
 
-- (NSObject<InteractiveObject> *)interactorFromEntry:(NSObject<InteractiveObject> *)entry;
+- (void)refresh;
+- (NSObject<ModelObject> *)interactorFromEntry:(NSObject<ModelObject> *)entry;
 - (void)sync:(NSArray *)entries;
 
 @end

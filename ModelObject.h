@@ -1,5 +1,5 @@
 //
-//  InteractiveObject.h
+//  ModelObject.h
 //  DbBaseUtils
 //
 //  Created by Qiang Huang on 9/4/16.
@@ -8,24 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol InteractiveArray;
+@protocol ModelList;
 
-@protocol InteractiveObject <NSObject>
+@protocol ModelObject <NSObject>
 
 @optional
 @property (nonatomic, readonly) NSString * displayTitle;
 @property (nonatomic, readonly) NSString * displaySubtitle;
 @property (nonatomic, readonly) NSString * displayImageUrl;
-- (NSObject<InteractiveArray> *)children:(NSString *)tag;
+- (NSObject<ModelList> *)children:(NSString *)tag;
 
 @end
 
-@protocol InteractiveArray <InteractiveObject>
+@protocol ModelList <ModelObject>
 
-@property (nonatomic, strong) NSMutableArray<NSObject<InteractiveObject> *> * entries;
+@property (nonatomic, strong) NSMutableArray<NSObject<ModelObject> *> * entries;
 
 @optional
 
-@property (nonatomic, strong) NSObject<InteractiveObject> * parent;
+@property (nonatomic, strong) NSObject<ModelObject> * parent;
 
 @end

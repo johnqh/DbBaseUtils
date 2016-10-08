@@ -12,22 +12,35 @@
 
 @synthesize entries = _entries;
 
+- (id)awakeAfterUsingCoder:(NSCoder *)aDecoder
+{
+    [super awakeAfterUsingCoder:aDecoder];
+
+    [self refresh];
+
+    return self;
+}
+
+- (void)refresh
+{
+}
+
 - (NSString *)displaySubtitle
 {
     return [NSString stringWithFormat:@"%d", (int)_entries.count];
 }
 
-- (NSObject<InteractiveObject> *)interactorFromEntry:(NSObject<InteractiveObject> *)entry
+- (NSObject<ModelObject> *)interactorFromEntry:(NSObject<ModelObject> *)entry
 {
     return entry;   // default to object directly
 }
 
-- (NSInteger)indexOf:(NSObject<InteractiveObject> *)sourceObject in:(NSArray *)destination startingAtIndex:(NSInteger)startIndex
+- (NSInteger)indexOf:(NSObject<ModelObject> *)sourceObject in:(NSArray *)destination startingAtIndex:(NSInteger)startIndex
 {
     NSInteger foundIndex = NSNotFound;
     for (NSInteger i = startIndex; (foundIndex == NSNotFound) && (i < destination.count); i ++)
     {
-        NSObject<InteractiveObject> * existingObject = destination[i];
+        NSObject<ModelObject> * existingObject = destination[i];
         BOOL same = [self compare:existingObject with:sourceObject];
         if (same)
         {
@@ -37,7 +50,7 @@
     return foundIndex;
 }
 
-- (bool)compare:(NSObject<InteractiveObject> *)destination with:(NSObject<InteractiveObject> *)source
+- (bool)compare:(NSObject<ModelObject> *)destination with:(NSObject<ModelObject> *)source
 {
     return (destination == source);
 }
@@ -46,12 +59,12 @@
 {
     if (_entries)
     {
-        NSObject<InteractiveObject> * lastItem = nil;
+        NSObject<ModelObject> * lastItem = nil;
         NSInteger cursor = 0;
         for (NSUInteger i = 0; i < entries.count; i ++)
         {
-            NSObject<InteractiveObject> * existingItem = nil;
-            NSObject<InteractiveObject> * sourceObject = entries[i];
+            NSObject<ModelObject> * existingItem = nil;
+            NSObject<ModelObject> * sourceObject = entries[i];
             NSUInteger foundIndex = [self indexOf:sourceObject in:_entries startingAtIndex:cursor];
             if (foundIndex != NSNotFound)
             {

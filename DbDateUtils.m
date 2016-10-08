@@ -199,6 +199,18 @@ static NSDateFormatter * _dateFormatter = nil;
     return nil;
 }
 
++ (NSString *)toTimeString:(NSDate *)date
+{
+    if (date)
+    {
+        NSDateFormatter * formatter = [self localFormatter];
+        [formatter setDateStyle:NSDateFormatterNoStyle];
+        [formatter setTimeStyle:NSDateFormatterShortStyle];
+        return [formatter stringFromDate:date];
+    }
+    return nil;
+}
+
 + (NSDate *)addMonth:(int)month toDate:(NSDate *)date;
 {
     NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];

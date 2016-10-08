@@ -25,7 +25,7 @@
     return _data.displayImageUrl;
 }
 
-- (NSObject<InteractiveArray> *)children:(NSString *)tag
+- (NSObject<ModelList> *)children:(NSString *)tag
 {
     return [_data children:tag];
 }

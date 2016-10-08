@@ -10,7 +10,7 @@
 
 @implementation CollectionInteractor
 
-- (void)setCollection:(NSObject<InteractiveArray> *)collection
+- (void)setCollection:(NSObject<ModelList> *)collection
 {
     if (_collection != collection)
     {
@@ -36,8 +36,8 @@
             if (indice && indice.count)
             {
                 [indice enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-                    NSObject<InteractiveObject> * entry = self.collection.entries[idx];
-                    NSObject<InteractiveObject> * interactor = [self interactorFromEntry:entry];
+                    NSObject<ModelObject> * entry = self.collection.entries[idx];
+                    NSObject<ModelObject> * interactor = [self interactorFromEntry:entry];
                     [self.entries insertObject:interactor atIndex:idx];
                 }];
 
@@ -57,9 +57,9 @@
         else
         {
             NSMutableArray * entries = [NSMutableArray arrayWithCapacity:self.collection.entries.count];
-            for (NSObject<InteractiveObject> * entry in self.collection.entries)
+            for (NSObject<ModelObject> * entry in self.collection.entries)
             {
-                NSObject<InteractiveObject> * interactor = [self interactorFromEntry:entry];
+                NSObject<ModelObject> * interactor = [self interactorFromEntry:entry];
                 [entries addObject:interactor];
             }
             self.entries = entries;

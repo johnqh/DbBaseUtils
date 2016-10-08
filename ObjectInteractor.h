@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "InteractiveObject.h"
+#import "ModelObject.h"
 
-@interface ObjectInteractor : NSObject<InteractiveObject>
+@interface ObjectInteractor : NSObject<ModelObject>
 
-@property (nonatomic, strong) NSObject<InteractiveObject> * data;
+@property (nonatomic, strong) NSObject<ModelObject> * data;
 
 @end

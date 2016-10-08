@@ -11,6 +11,6 @@
 
 @interface CollectionInteractor : ArrayInteractor
 
-@property (nonatomic, strong) NSObject<InteractiveArray> * collection;
+@property (nonatomic, strong) NSObject<ModelList> * collection;
 
 @end
