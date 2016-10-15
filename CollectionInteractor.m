@@ -35,11 +35,13 @@
             NSIndexSet * indice = change[NSKeyValueChangeIndexesKey];
             if (indice && indice.count)
             {
+                [self willChange:NSKeyValueChangeInsertion valuesAtIndexes:indice forKey:@"entries"];
                 [indice enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
                     NSObject<ModelObject> * entry = self.collection.entries[idx];
                     NSObject<ModelObject> * interactor = [self interactorFromEntry:entry];
                     [self.entries insertObject:interactor atIndex:idx];
                 }];
+                [self didChange:NSKeyValueChangeInsertion valuesAtIndexes:indice forKey:@"entries"];
 
             }
 
@@ -49,9 +51,11 @@
             NSIndexSet * indice = change[NSKeyValueChangeIndexesKey];
             if (indice && indice.count)
             {
+                [self willChange:NSKeyValueChangeRemoval valuesAtIndexes:indice forKey:@"entries"];
                 [indice enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
                     [self.entries removeObjectAtIndex:idx];
                 }];
+                [self didChange:NSKeyValueChangeRemoval valuesAtIndexes:indice forKey:@"entries"];
             }
         }
         else
