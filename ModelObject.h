@@ -24,10 +24,9 @@
 
 @property (nonatomic, strong) NSMutableArray<NSObject<ModelObject> *> * entries;
 
-- (void)refresh;
-
 @optional
 
 @property (nonatomic, strong) NSObject<ModelObject> * parent;
+- (void)refresh;
 
 @end
