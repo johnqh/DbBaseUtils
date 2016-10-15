@@ -11,7 +11,6 @@
 
 @interface ArrayInteractor : NSObject<ModelList>
 
-- (void)refresh;
 - (NSObject<ModelObject> *)interactorFromEntry:(NSObject<ModelObject> *)entry;
 - (void)sync:(NSArray *)entries;
 

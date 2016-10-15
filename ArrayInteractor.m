@@ -12,15 +12,6 @@
 
 @synthesize entries = _entries;
 
-- (id)awakeAfterUsingCoder:(NSCoder *)aDecoder
-{
-    [super awakeAfterUsingCoder:aDecoder];
-
-    [self refresh];
-
-    return self;
-}
-
 - (void)refresh
 {
 }
