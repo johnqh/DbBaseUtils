@@ -11,6 +11,8 @@
 
 @interface ArrayInteractor : NSObject<ModelList>
 
+@property (nonatomic, assign) IBInspectable NSInteger index;
+
 - (NSObject<ModelObject> *)interactorFromEntry:(NSObject<ModelObject> *)entry;
 - (void)sync:(NSArray *)entries;
 

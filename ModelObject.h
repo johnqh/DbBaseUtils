@@ -27,6 +27,8 @@
 @optional
 
 @property (nonatomic, strong) NSObject<ModelObject> * parent;
+@property (nonatomic, assign) NSInteger index;
+
 - (void)refresh;
 
 @end
