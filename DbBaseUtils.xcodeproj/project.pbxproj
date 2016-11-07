@@ -7,11 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3114A24B1D7C9BF000740EED /* ObjectInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3114A24A1D7C9BF000740EED /* ObjectInteractor.m */; };
-		3114A24E1D7C9BFE00740EED /* CollectionInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3114A24D1D7C9BFE00740EED /* CollectionInteractor.m */; };
-		3114A2E01D7D406500740EED /* ArrayInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3114A2DF1D7D406500740EED /* ArrayInteractor.m */; };
 		312BCBE21B1E9BDD00BFAB8F /* DbWeakArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 312BCBE11B1E9BDD00BFAB8F /* DbWeakArray.m */; };
-		31B92B091DA029A1000683A6 /* HierchicalCollectionInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B92B081DA029A1000683A6 /* HierchicalCollectionInteractor.m */; };
 		64C7C1811B0116B500074FE8 /* DbDirectoryUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C7C17E1B0116B500074FE8 /* DbDirectoryUtils.m */; };
 		64C7C1821B0116B500074FE8 /* DbFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C7C1801B0116B500074FE8 /* DbFileUtils.m */; };
 		64C7C1851B0116BB00074FE8 /* DbDateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C7C1841B0116BB00074FE8 /* DbDateUtils.m */; };
@@ -43,17 +39,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3114A2451D7C9B0D00740EED /* ModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelObject.h; sourceTree = "<group>"; };
-		3114A2491D7C9BF000740EED /* ObjectInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectInteractor.h; sourceTree = "<group>"; };
-		3114A24A1D7C9BF000740EED /* ObjectInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectInteractor.m; sourceTree = "<group>"; };
-		3114A24C1D7C9BFE00740EED /* CollectionInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionInteractor.h; sourceTree = "<group>"; };
-		3114A24D1D7C9BFE00740EED /* CollectionInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionInteractor.m; sourceTree = "<group>"; };
-		3114A2DE1D7D406500740EED /* ArrayInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayInteractor.h; sourceTree = "<group>"; };
-		3114A2DF1D7D406500740EED /* ArrayInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayInteractor.m; sourceTree = "<group>"; };
 		312BCBE01B1E9BDD00BFAB8F /* DbWeakArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbWeakArray.h; sourceTree = "<group>"; };
 		312BCBE11B1E9BDD00BFAB8F /* DbWeakArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbWeakArray.m; sourceTree = "<group>"; };
-		31B92B071DA029A1000683A6 /* HierchicalCollectionInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HierchicalCollectionInteractor.h; sourceTree = "<group>"; };
-		31B92B081DA029A1000683A6 /* HierchicalCollectionInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HierchicalCollectionInteractor.m; sourceTree = "<group>"; };
 		64C7C17D1B0116B500074FE8 /* DbDirectoryUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbDirectoryUtils.h; sourceTree = "<group>"; };
 		64C7C17E1B0116B500074FE8 /* DbDirectoryUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbDirectoryUtils.m; sourceTree = "<group>"; };
 		64C7C17F1B0116B500074FE8 /* DbFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbFileUtils.h; sourceTree = "<group>"; };
@@ -88,29 +75,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3114A2441D7C9ABD00740EED /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				3114A2451D7C9B0D00740EED /* ModelObject.h */,
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
-		3114A2481D7C9BD000740EED /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				3114A2491D7C9BF000740EED /* ObjectInteractor.h */,
-				3114A24A1D7C9BF000740EED /* ObjectInteractor.m */,
-				3114A2DE1D7D406500740EED /* ArrayInteractor.h */,
-				3114A2DF1D7D406500740EED /* ArrayInteractor.m */,
-				3114A24C1D7C9BFE00740EED /* CollectionInteractor.h */,
-				3114A24D1D7C9BFE00740EED /* CollectionInteractor.m */,
-				31B92B071DA029A1000683A6 /* HierchicalCollectionInteractor.h */,
-				31B92B081DA029A1000683A6 /* HierchicalCollectionInteractor.m */,
-			);
-			name = Interactor;
-			sourceTree = "<group>";
-		};
 		312BCBDC1B1E9B9200BFAB8F /* Weak */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,8 +125,6 @@
 		64CF11D31B0115F20071B897 = {
 			isa = PBXGroup;
 			children = (
-				3114A2441D7C9ABD00740EED /* Protocols */,
-				3114A2481D7C9BD000740EED /* Interactor */,
 				312BCBDC1B1E9B9200BFAB8F /* Weak */,
 				64C7C19E1B0117F600074FE8 /* Text */,
 				64C7C19A1B0117B600074FE8 /* Debug */,
@@ -286,15 +248,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3114A24E1D7C9BFE00740EED /* CollectionInteractor.m in Sources */,
 				64C7C1851B0116BB00074FE8 /* DbDateUtils.m in Sources */,
-				3114A24B1D7C9BF000740EED /* ObjectInteractor.m in Sources */,
 				312BCBE21B1E9BDD00BFAB8F /* DbWeakArray.m in Sources */,
 				64C7C1821B0116B500074FE8 /* DbFileUtils.m in Sources */,
 				64C7C19D1B0117C800074FE8 /* DebugHelp.m in Sources */,
-				3114A2E01D7D406500740EED /* ArrayInteractor.m in Sources */,
 				64C7C1A11B01184E00074FE8 /* DbTextUtils.m in Sources */,
-				31B92B091DA029A1000683A6 /* HierchicalCollectionInteractor.m in Sources */,
 				64C7C1811B0116B500074FE8 /* DbDirectoryUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
